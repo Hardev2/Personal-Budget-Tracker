@@ -21,6 +21,9 @@ export function Nav() {
       <Link to="/allowance" className={linkClass('/allowance')} onClick={() => setMenuOpen(false)}>
         Allowance
       </Link>
+      <Link to="/planner" className={linkClass('/planner')} onClick={() => setMenuOpen(false)}>
+        Planner
+      </Link>
       <Link to="/expenses" className={linkClass('/expenses')} onClick={() => setMenuOpen(false)}>
         Expenses
       </Link>

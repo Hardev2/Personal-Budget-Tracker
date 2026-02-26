@@ -96,3 +96,14 @@ export function getPercentageSpent(totalSpent, allowanceAmount) {
   if (!allowanceAmount || allowanceAmount <= 0) return 0
   return Math.min(100, (totalSpent / allowanceAmount) * 100)
 }
+
+/**
+ * Number of days in the current allowance month (for planner).
+ * @param {string} startDate - ISO date string
+ * @returns {number}
+ */
+export function getDaysInAllowanceMonth(startDate) {
+  const { start, end } = getAllowanceMonthRange(startDate)
+  const oneDay = 1000 * 60 * 60 * 24
+  return Math.round((end - start) / oneDay) + 1
+}

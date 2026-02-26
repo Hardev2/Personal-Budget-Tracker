@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="img">
+  <defs>
+    <linearGradient id="piggy-body" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="piggy-slot" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+  </defs>
+  <!-- Piggy body -->
+  <ellipse cx="16" cy="18" rx="10" ry="11" fill="url(#piggy-body)" stroke="#4338ca" stroke-width="1"/>
+  <!-- Head -->
+  <circle cx="16" cy="10" r="6" fill="url(#piggy-body)" stroke="#4338ca" stroke-width="1"/>
+  <!-- Coin slot -->
+  <rect x="14" y="4" width="4" height="5" rx="1" fill="url(#piggy-slot)" stroke="#4338ca" stroke-width="0.5"/>
+  <!-- Ear -->
+  <ellipse cx="10" cy="8" rx="2.5" ry="3" fill="url(#piggy-body)" stroke="#4338ca" stroke-width="0.8"/>
+  <!-- Eye -->
+  <circle cx="14" cy="9.5" r="1.2" fill="#1e1b4b"/>
+  <!-- Coin -->
+  <circle cx="22" cy="22" r="3.5" fill="#fbbf24" stroke="#d97706" stroke-width="0.6"/>
+</svg>
