@@ -57,6 +57,17 @@ npm run build
 
 Output is in `dist/`. You can serve it from XAMPP by pointing the document root to `dist` or copying `dist` contents into `htdocs`.
 
+## Install on phone (PWA)
+
+The app is a **Progressive Web App (PWA)**. After you build and serve it over **HTTPS** (required for install):
+
+- **Android (Chrome):** Open the app URL → menu (⋮) → “Install app” or “Add to Home screen”.
+- **iPhone (Safari):** Open the app URL → Share → “Add to Home Screen”.
+
+You can use a tunnel (e.g. ngrok, Cloudflare Tunnel) or host the `dist/` folder on any HTTPS host (Vercel, Netlify, GitHub Pages, or your own server) so the install prompt appears.
+
+**Optional:** For a better install icon on some devices, add `pwa-192.png` (192×192) and `pwa-512.png` (512×512) to the `public/` folder; the app will use them automatically after a rebuild.
+
 ## Example data
 
 To try the app with sample data, in the browser console run:
