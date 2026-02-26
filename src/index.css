@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Safe area for notched devices (e.g. iPhone) */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .pb-safe {
+    padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
+  }
+}
+
+html {
+  /* Prevent overscroll bounce on iOS */
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100 antialiased;
+  /* Prevent zoom on input focus on iOS when inputs use 16px+ font */
+  font-size: 16px;
+  /* Reduce tap highlight on mobile */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Improve tap targets: use .touch-target for key actions on mobile */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
