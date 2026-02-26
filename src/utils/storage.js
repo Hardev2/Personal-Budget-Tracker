@@ -7,6 +7,8 @@ export const STORAGE_KEYS = {
   ALLOWANCE: 'allowanceData',
   EXPENSES: 'expenses',
   PLANNER: 'plannerItems',
+  SAVINGS: 'savings',
+  SAVINGS_GOAL: 'savingsGoal',
 }
 
 /**

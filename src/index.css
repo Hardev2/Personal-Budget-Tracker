@@ -7,6 +7,9 @@
   .pb-safe {
     padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
   }
+  .safe-area-b {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
 }
 
 html {

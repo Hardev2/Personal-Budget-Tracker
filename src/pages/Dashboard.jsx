@@ -21,8 +21,12 @@ export function Dashboard() {
     startDate: new Date().toISOString().slice(0, 10),
   })
   const [expenses, setExpenses] = useLocalStorage(STORAGE_KEYS.EXPENSES, [])
+  const [savings] = useLocalStorage(STORAGE_KEYS.SAVINGS, [])
 
   const expensesInMonth = getExpensesInCurrentMonth(expenses, allowance.startDate)
+  const totalSaved = Array.isArray(savings)
+    ? savings.reduce((sum, e) => sum + (Number(e.amount) || 0), 0)
+    : 0
   const totalSpent = getTotalExpenses(expensesInMonth)
   const remaining = getRemainingBalance(allowance.amount, expensesInMonth)
   const remainingDays = getRemainingDays(allowance.startDate)
@@ -72,6 +76,13 @@ export function Dashboard() {
         <Card title="Total spent" value={totalSpent} prefix="₱" />
         <Card title="Remaining balance" value={remaining} prefix="₱" />
         <Card title="Daily budget suggestion" value={dailyBudget} prefix="₱" sub={`${remainingDays} days left`} />
+        <Link to="/savings" className="rounded-xl border border-slate-200 dark:border-slate-700 p-3 sm:p-4 bg-white dark:bg-slate-800/50 hover:border-emerald-400 dark:hover:border-emerald-600 transition-colors block">
+          <p className="text-sm text-slate-500 dark:text-slate-400">Total saved</p>
+          <p className="text-lg font-bold text-emerald-700 dark:text-emerald-400 mt-1 sm:text-xl">
+            ₱{totalSaved % 1 === 0 ? totalSaved : totalSaved.toFixed(2)}
+          </p>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Tap to track savings</p>
+        </Link>
       </div>
 
       <div className="rounded-xl border border-slate-200 dark:border-slate-700 p-3 sm:p-4">
